@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Button from '@mui/base/Button';
 
 
 // Logo Component
@@ -86,9 +87,9 @@ export const Screen = () => (
                     <div className="stock-wise-wrapper">
                         <StockWiseMessage />
                     </div>
-                    <div className="div-wrapper">
-                        <div className="text-wrapper-5">종목 추천 받으러 가기!</div>
-                    </div>
+                    <Button className="btn">
+                            종목 추천 받으러 가기!
+                    </Button>
                 </div>
             </div>
         </div>

@@ -247,15 +247,34 @@
     width: 996px;
 }
 
-.screen .div-wrapper {
+.screen .btn {
     background-color: #6425fe;
     border-radius: 20px;
     height: 88px;
     left: 572px;
-    position: absolute;
+    position: relative;
     top: 1069px;
     width: 523px;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    line-height: normal;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Roboto-SemiBold", Helvetica;
+    box-shadow: 6px 6px 6px black;
 }
+.screen .btn:hover {
+      background-color:#6425fe;
+      transition: 0.3s;
+    cursor: pointer;
+    box-shadow: none;
+  }
+.screen .btn:active {
+    background-color: #3700ff;
+    box-shadow: none;
+}
+
 
 .screen .text-wrapper-5 {
     color: #ffffff;
