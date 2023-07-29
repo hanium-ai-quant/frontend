@@ -1,38 +1,62 @@
 .App {
+  display : flex;
+  justify-content: center;
+  align-items: center;
+flex-direction: column;
+}
+
+.card {
+  box-sizing: border-box;
+  min-width: 50%;
+  min-height: 30%;
+  width: 60%;
+  aspect-ratio: 5/3;
+  background: rgba(217, 217, 217, 0.58);
+  border: 1px solid white;
+  box-shadow: 15px 15px 30px #bebebe,
+             -15px -15px 30px #ffffff;
+  backdrop-filter: blur(6px);
+  border-radius: 50px;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  user-select: none;
+  font-weight: bolder;
+  color: black;
 }
 
-.App-link {
-  color: #61dafb;
+.card:hover {
+  transform: scale(1.05);
+  transition: 0.6s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.full-size {
+  width: 90%;
+  height: 93%;
+
+  align-items: center;
+  justify-content: center;
 }
+
+#SaleChart {
+  margin: auto auto;
+}
+
+.infolist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 50%;
+  height: 80%;
+  padding: 0;
+  list-style: none;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: black;
+}
+
