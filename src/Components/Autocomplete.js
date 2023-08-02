@@ -1,15 +1,16 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import Box from '@mui/material/Box';
+import { HStack } from '@chakra-ui/react'
 import '../App.css';
+import axios from 'axios';
 
 const stocks = [
-  { 종목명: 'The Shawshank Redemption', 종목코드: 1994 },
-  { 종목명: 'The Godfather', 종목코드: 1972 }
+  { 종목명: '삼성전자', 종목코드: '005930' },
+  { 종목명: 'The Godfather', 종목코드: '000020' }
 ];
 
-export default function ComboBox() {
+export default function SearchBar() {
   const [selectedName, setSelectedName] = React.useState(null);
   const [selectedCode, setSelectedCode] = React.useState(null);
 
@@ -19,18 +20,23 @@ export default function ComboBox() {
   };
 
   const handleCodeChange = (event, value) => {
-    setSelectedCode(value);
-    if (value) setSelectedName(stocks.find(stock => stock.종목코드 === parseInt(value, 10)));
-  };
+      setSelectedCode(value);
+      if (value) {
+        const matchingStock = stocks.find(stock => stock.종목코드 === value);
+        setSelectedName(matchingStock ? matchingStock.종목명 : null);
+      }
+    };
+
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+    <HStack spacing='24px'>
       <Autocomplete
         disablePortal
         id="combo-box-demo-name"
         options={stocks}
         value={selectedName}
         getOptionLabel={(option) => option.종목명}
+        value={selectedCode ? stocks.find(stock => stock.종목코드 === selectedCode) : null}
         onChange={handleNameChange}
         sx={{ width: 300, marginRight: 2 }}
         renderInput={(params) => <TextField {...params} label="종목명" />}
@@ -44,6 +50,6 @@ export default function ComboBox() {
         sx={{ width: 300 }}
         renderInput={(params) => <TextField {...params} label="종목코드" />}
       />
-    </Box>
+    </HStack>
   );
 }

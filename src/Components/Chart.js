@@ -1,63 +1,97 @@
 import React from "react";
-import ReactApexChart from "react-apexcharts";
+import Chart from "react-apexcharts";
 
-class SalesChart extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      options: {
-        chart: {
-          type: 'line'
+const mockData = {
+    data: [
+        {
+            x: "02-10-2017 GMT",
+            y: 34
         },
-        series: [{
-          name: 'sales',
-          data: [30,40,35,50,49,60,70,91,125]
-        }],
-        xaxis: {
-          categories: [1991,1992,1993,1994,1995,1996,1997, 1998,1999]
+        {
+            x: "02-11-2017 GMT",
+            y: 43
         },
-    responsive: [
-    {
-      breakpoint: 1000,
-      options: {
-        plotOptions: {
-          bar: {
-            horizontal: false
-          }
+        {
+            x: "02-12-2017 GMT",
+            y: 31
         },
-        legend: {
-          position: "bottom"
+        {
+            x: "02-13-2017 GMT",
+            y: 43
+        },
+        {
+            x: "02-14-2017 GMT",
+            y: 33
+        },
+        {
+            x: "02-15-2017 GMT",
+            y: 52
         }
-      }
+    ]
+};
+
+const dataSeries = mockData.data.map(item => ({ x: item.x, y: item.y }));
+
+class BigChart extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            options: {
+                chart: {
+                    type: 'line'
+                },
+                series: [{
+                    name: 'prices',
+                    data: dataSeries,
+                }],
+                xaxis: {
+                    type: 'datetime',
+                },
+                responsive: [
+                    {
+                        breakpoint: 1000,
+                        options: {
+                            plotOptions: {
+                                bar: {
+                                    horizontal: false
+                                }
+                            },
+                            legend: {
+                                position: "bottom"
+                            }
+                        }
+                    }
+                ],
+                stroke: {
+                    curve: 'smooth',
+                },
+                animations: {
+                    enabled: true,
+                    easing: 'linear',
+                    speed: 800,
+                    animateGradually: {
+                        enabled: true,
+                        delay: 150
+                    },
+                    dynamicAnimation: {
+                        enabled: true,
+                        speed: 350
+                    }
+                }
+            },
+        };
     }
-  ],
-        stroke: {
-          curve: 'smooth',
-        },
-        animations: {
-          enabled: true,
-          easing: 'linear',
-          speed: 800,
-          animateGradually: {
-              enabled: true,
-              delay: 150
-          },
-          dynamicAnimation: {
-              enabled: true,
-              speed: 350
-        }
+
+    render() {
+        return (
+            <Chart
+                options={this.state.options}
+                series={this.state.options.series}
+                type="line" />
+        );
     }
 }
-      };
-    };
-  render() {
-    return (
-        <div id="chart">
-          <ReactApexChart options={this.state.options} series={this.state.options.series} type="line" />
-        </div>
-    );
-  }
-}
 
-export default SalesChart;
+export default BigChart;
+
