@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const stocks = [
   { 종목명: '삼성전자', 종목코드: '005930' },
-  { 종목명: 'The Godfather', 종목코드: '000020' }
+  { 종목명: '전자삼성', 종목코드: '000020' }
 ];
 
 export default function SearchBar() {
