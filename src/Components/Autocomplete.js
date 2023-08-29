@@ -1,55 +1,61 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import { HStack } from '@chakra-ui/react'
-import '../App.css';
+import { HStack } from '@chakra-ui/react';
 import axios from 'axios';
 
-const stocks = [
-  { 종목명: '삼성전자', 종목코드: '005930' },
-  { 종목명: '전자삼성', 종목코드: '000020' }
-];
-
 export default function SearchBar() {
-  const [selectedName, setSelectedName] = React.useState(null);
-  const [selectedCode, setSelectedCode] = React.useState(null);
+    const [stocks, setStocks] = React.useState([]);
+    const [selectedName, setSelectedName] = React.useState(null);
+    const [selectedCode, setSelectedCode] = React.useState(null);
 
-  const handleNameChange = (event, value) => {
-    setSelectedName(value);
-    if (value) setSelectedCode(stocks.find(stock => stock.종목명 === value.종목명).종목코드);
-  };
-
-  const handleCodeChange = (event, value) => {
-      setSelectedCode(value);
-      if (value) {
-        const matchingStock = stocks.find(stock => stock.종목코드 === value);
-        setSelectedName(matchingStock ? matchingStock.종목명 : null);
-      }
+    const handleNameChange = (event, value) => {
+        if (value) {
+            setSelectedName(value);
+            const matchedStock = stocks.find(stock => stock.CMP_KOR === value.CMP_KOR);
+            if (matchedStock) setSelectedCode(matchedStock.CMP_CD);
+        } else {
+            setSelectedName(null);
+            setSelectedCode(null);
+        }
     };
 
+    const handleCodeChange = (event, value) => {
+        if (value) {
+            setSelectedCode(value);
+            const matchingStock = stocks.find(stock => stock.CMP_CD === value);
+            setSelectedName(matchingStock ? matchingStock.CMP_KOR : null);
+        } else {
+            setSelectedName(null);
+            setSelectedCode(null);
+        }
+    };
 
-  return (
-    <HStack spacing='24px'>
-      <Autocomplete
-        disablePortal
-        id="combo-box-demo-name"
-        options={stocks}
-        value={selectedName}
-        getOptionLabel={(option) => option.종목명}
-        value={selectedCode ? stocks.find(stock => stock.종목코드 === selectedCode) : null}
-        onChange={handleNameChange}
-        sx={{ width: 300, marginRight: 2 }}
-        renderInput={(params) => <TextField {...params} label="종목명" />}
-      />
-      <Autocomplete
-        disablePortal
-        id="combo-box-demo-code"
-        options={stocks.map(stock => String(stock.종목코드))}
-        value={selectedCode ? selectedCode.toString() : null}
-        onChange={handleCodeChange}
-        sx={{ width: 300 }}
-        renderInput={(params) => <TextField {...params} label="종목코드" />}
-      />
-    </HStack>
-  );
+    React.useEffect(() => {
+        axios.get('http://localhost:3001/stocks')
+            .then(response => setStocks(response.data))
+            .catch(error => console.error('Error fetching stocks:', error));
+    }, []);
+
+    return (
+        <HStack spacing='24px'>
+            <Autocomplete
+                id="combo-box-stock-name"
+                options={stocks}
+                value={selectedName}
+                getOptionLabel={(option) => option.CMP_KOR || ''}
+                onChange={handleNameChange}
+                sx={{ width: 300 }}
+                renderInput={(params) => <TextField {...params} label="Stock Name" />}
+            />
+            <Autocomplete
+                id="combo-box-stock-code"
+                options={stocks.map(stock => String(stock.CMP_CD))}
+                value={String(selectedCode) || ''}
+                onChange={handleCodeChange}
+                sx={{ width: 300 }}
+                renderInput={(params) => <TextField {...params} label="Stock Code" />}
+            />
+        </HStack>
+    );
 }
