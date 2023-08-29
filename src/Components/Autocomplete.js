@@ -21,15 +21,15 @@ export default function SearchBar() {
     };
 
     const handleCodeChange = (event, value) => {
-        if (value) {
-            setSelectedCode(value);
-            const matchingStock = stocks.find(stock => stock.CMP_CD === value);
-            setSelectedName(matchingStock ? matchingStock.CMP_KOR : null);
-        } else {
-            setSelectedName(null);
-            setSelectedCode(null);
-        }
-    };
+    if (value) {
+        setSelectedCode(value);
+        const matchingStock = stocks.find(stock => stock.CMP_CD === value);
+        if (matchingStock) setSelectedName(matchingStock);
+    } else {
+        setSelectedName(null);
+        setSelectedCode(null);
+    }
+};
 
     React.useEffect(() => {
         axios.get('http://localhost:3001/stocks')
@@ -51,7 +51,7 @@ export default function SearchBar() {
             <Autocomplete
                 id="combo-box-stock-code"
                 options={stocks.map(stock => String(stock.CMP_CD))}
-                value={String(selectedCode) || ''}
+                value={selectedCode}
                 onChange={handleCodeChange}
                 sx={{ width: 300 }}
                 renderInput={(params) => <TextField {...params} label="Stock Code" />}
