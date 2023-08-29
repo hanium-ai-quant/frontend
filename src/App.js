@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import './App.css';
 import BigChart from "./Components/Chart";
-import Information from "./Components/information";
+import Information from "./Components/Information";
 import Card from 'react-bootstrap/Card';
 import SearchBar from "./Components/Autocomplete";
 
