@@ -14,8 +14,8 @@ export const fetchStockData = async (stockCode) => {
   const URL_BASE = "https://openapivts.koreainvestment.com:29443";
   const PATH = "uapi/domestic-stock/v1/quotations/inquire-price";
   const URL = `${URL_BASE}/${PATH}`;
-  const APP_KEY = "PSyaXJzZcoT29nlEMCh5TkJ9vvVdqVZotlX6"; // Make sure to replace with your actual app key
-  const APP_SECRET = "ingcb3WRQBNVApTEm/lxDxHtLM4qO78vhO9tNrq8+4OVQJAOpkDavmMRsi8CusZLMv3N33kOgjTwGWT+NgANAsHt2fNuBCzwZ3CoaDEnf1XH40qDpxk8h8wYA4/WZERvRXhTyZym0kQsz0+dUoAyoAd6N0w6eFcMzHapdOW6I+Jtu2MzXoo="; // Make sure to replace with your actual app secret
+  const APP_KEY = process.env.APP_KEY; // Make sure to replace with your actual app key
+  const APP_SECRET = process.env.APP_SECRET; // Make sure to replace with your actual app secret
 
   const headers = {
     "Content-Type": "application/json",
@@ -40,3 +40,4 @@ export const fetchStockData = async (stockCode) => {
     return null;
   }
 };
+

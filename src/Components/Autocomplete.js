@@ -3,6 +3,7 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { HStack } from '@chakra-ui/react';
 import axios from 'axios';
+import {fetchStockData} from "../kis_api/fetch_data";
 
 export default function SearchBar() {
     const [stocks, setStocks] = React.useState([]);
@@ -20,16 +21,21 @@ export default function SearchBar() {
         }
     };
 
-    const handleCodeChange = (event, value) => {
-    if (value) {
-        setSelectedCode(value);
-        const matchingStock = stocks.find(stock => stock.CMP_CD === value);
-        if (matchingStock) setSelectedName(matchingStock);
-    } else {
-        setSelectedName(null);
-        setSelectedCode(null);
-    }
-};
+    const handleCodeChange = async (event, value) => {
+        if (value) {
+            setSelectedCode(value);
+            const matchingStock = stocks.find(stock => stock.CMP_CD === value);
+            if (matchingStock) {
+                setSelectedName(matchingStock);
+                const stockData = await fetchStockData(value); // Call fetchStockData
+                console.log("Fetched stock data:", stockData); // Do something with stockData
+            }
+        } else {
+            setSelectedName(null);
+            setSelectedCode(null);
+        }
+    };
+
 
     React.useEffect(() => {
         axios.get('http://localhost:3001/stocks')

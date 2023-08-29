@@ -2,8 +2,8 @@ import axios from 'axios';
 import fs from 'fs';
 
 // Constants
-const APP_KEY = 'PSyaXJzZcoT29nlEMCh5TkJ9vvVdqVZotlX6';
-const APP_SECRET = 'ingcb3WRQBNVApTEm/lxDxHtLM4qO78vhO9tNrq8+4OVQJAOpkDavmMRsi8CusZLMv3N33kOgjTwGWT+NgANAsHt2fNuBCzwZ3CoaDEnf1XH40qDpxk8h8wYA4/WZERvRXhTyZym0kQsz0+dUoAyoAd6N0w6eFcMzHapdOW6I+Jtu2MzXoo=';
+const APP_KEY = process.env.APP_KEY
+const APP_SECRET = process.env.APP_SECRET;
 const URL_BASE = 'https://openapivts.koreainvestment.com:29443';
 
 // Function to save token to file
