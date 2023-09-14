@@ -1,0 +1,65 @@
+.modalContainer{
+    width : 700px;
+    height: auto;
+    z-index : 999;
+    top : 25%;
+    left : 30%;
+    position : absolute;
+    background-color : #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+    padding : 30px;
+    text-align: left;
+}
+
+.containerName{
+    font-size : 18px;
+    font-weight: 600;
+    margin-left : 30px;
+}
+
+.add-main{
+    padding : 40px;
+}
+
+.add-optionBox{
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top : 30px;
+}
+
+.add-button{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.add-button > button{
+    margin : 10px;
+    width : 150px;
+    padding : 10px;
+    border-radius: 10px;
+    border : none;
+    color : #ffffff;
+    background-color: #9490f6;
+    cursor: pointer;
+}
+
+.add-main > label, .add-option > label{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.add-main > input,.add-option > input {
+    border-radius: 8px;
+    padding : 10px;
+    box-shadow : 0px 0px 5px rgba(0,0,0,0.25);
+    border : none;
+    width : 100%;
+}
+
+
+.add-main > input:focus, .add-option > input:focus{
+    outline : 1.5px solid rgba(148, 144, 246, 0.5);
+    box-shadow: 0 0 5px 5px rgba(148,144,246,0.3);
+}

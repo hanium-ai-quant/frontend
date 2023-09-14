@@ -1,0 +1,82 @@
+.Login_Container{
+    position : relative;
+    top : 100px;
+    overflow: auto;
+    height: 100vh;
+    background-color: #f2f2f2;
+}
+
+/* 로그인 박스 */
+.LogIn{
+    position : inherit;
+    top : 120px;
+    left : 35%;
+    width : 20%;
+    text-align: center;
+    background-color: #fffefe;
+    padding: 50px 100px;
+    border-radius: 10px;
+    box-shadow: 10px 5px 30px 10px rgba(0, 0, 0, 0.10);
+}
+
+/* Welcom 문구 */
+.LogIn > h1{
+    color : #6425fe;
+    font-size : 30px;
+}
+
+/* 입력 칸 */
+.Login_textArea{
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.Login_textArea > .Text_Name{
+    color : #2c2c2c;
+    font-size : small;
+}
+
+.Login_textArea > .Text_input{
+    position : relative;
+    width : 100%;
+    margin-top: 10px;
+    padding : 10px;
+    border-radius: 5px;
+    border : solid 1px #adabab;
+}
+
+/* 입력칸을 클릭했을 때 */
+.Login_textArea > .Text_input:focus{
+    outline : none;
+    border : solid 1.2px #6425fe;
+    box-shadow: 0 0 5px 0 rgba(100, 37, 254, 0.2), 0 0 20px 0 rgba(100, 37, 254, 0.19);
+}
+
+/* 에러 메세지 */
+.Login_textArea > .errMsg > p {
+    color : #6425fe;
+    font-size : 12px;
+}
+
+/* 로그인 버튼 */
+.LoginBtn{
+    padding : 15px 50px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    border-radius: 30px;
+    border : none;
+    background-color: rgba(100, 37, 254, 0.3);
+    cursor: pointer;
+}
+
+.LoginBtn:hover{
+    background-color: rgba(100, 37, 254, 0.7);
+    box-shadow: 0px 0px 10px 10px rgba(100,37,254,0.1);
+}
+
+/* 회원가입 하러가기 */
+.go_SignUp{
+    color : #6425fe;
+    text-decoration: none;
+    font-weight: bold;
+}
