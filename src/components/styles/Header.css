@@ -1,0 +1,23 @@
+.Header{
+    position : fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FDFDFD;
+    z-index: 1000;
+    width : 84vw;
+}
+
+.Header-text{
+    margin-top : 16px;
+    margin-left: 50px;
+}
+
+.Header-userName{
+    font-weight: 600;
+}
+
+.Header-userImg{
+    width : 30px;
+    margin-right: 50px;
+}

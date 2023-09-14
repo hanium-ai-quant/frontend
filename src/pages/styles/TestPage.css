@@ -1,0 +1,57 @@
+.test-container{
+    position: relative;
+    top: 56px;
+    background-color : #f2f2f2;
+    padding : 30px 40px;
+    white-space: pre-line;
+    text-align: left;
+    width : 83vw;
+}
+
+.spolight{
+    font-weight: 600;
+    color : #6425FE;
+}
+
+.testBox{
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding : 20px 57px;
+    text-align : center;
+    margin : 40px 0px;
+}
+
+.testMain{
+    display : flex;
+    flex-direction: column;
+    padding : 10px 57px 0px;
+    text-align: left;
+}
+
+.testMain .choiceBox{
+    margin : 20px 0px;
+}
+
+.testMain .option{
+    margin: 15px;
+}
+
+.testMain .option .checker{
+    margin-right : 10px;
+}
+
+
+/* 결과 확인 버튼 */
+.goResult{
+    margin: 40px;
+    padding: 15px;
+    width: 250px;
+    height: 50px;
+    background-color: #9490F6;
+    color : #ffffff;
+    border-radius: 20px;
+    border : none;
+    font-size : 17px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}

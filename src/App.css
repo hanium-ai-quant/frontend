@@ -1,0 +1,10 @@
+.App {
+    text-align: center;
+    font-family:'Epilogue','Nanum Gothic', sans-serif;;
+  }
+  
+  
+  .AppContainer{
+    position : relative;
+    left : 227px;
+  }

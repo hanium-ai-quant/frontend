@@ -1,0 +1,58 @@
+.interest-Container{
+    position: relative;
+    top: 56px;
+    background-color : #f2f2f2;
+    padding : 30px 40px;
+    white-space: pre-line;
+    text-align: left;
+    width : 84vw;
+}
+
+
+.interest-Main{
+    text-align: center;
+}
+
+.interest-button{
+    background-color: #ffffff;
+    color:#595961;
+    border-radius: 20px;
+    border : none;
+    padding : 5px 20px;
+    margin : 5px;
+    font-size : 15px;
+    cursor: pointer;
+}
+
+.interests{
+    margin : 100px;
+}
+
+.interest-button{
+    color : #595961;
+    margin : 7px;
+}
+
+.setInterest-button{
+    margin: 40px;
+    padding: 15px;
+    width: 250px;
+    height: 50px;
+    background-color: #9490F6;
+    color : #ffffff;
+    border-radius: 20px;
+    border : none;
+    font-size : 17px;
+    cursor: pointer;
+}
+
+.goLink{
+    text-decoration: none;
+    cursor : pointer;
+    color : #6425FE;
+    font-size : large;
+    background-color : #ffffff;
+    padding : 10px 30px;
+    border-radius: 20px;
+    margin : 50px 10px;
+}
