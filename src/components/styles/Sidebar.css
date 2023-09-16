@@ -1,0 +1,67 @@
+.sidebar{
+    position : relative;
+    width : max-content;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.sidebar > .container {
+    position : fixed;
+    width : fit-content;
+    height: 100vh;
+    background-color: #ffffff;
+    text-align: center;
+    z-index : 1000;
+}
+
+.logoimg{
+    width : 10rem;
+    margin-top : 20px;
+    margin-left : 15px;
+}
+
+.searchBox{
+    text-align: center;
+    margin : 30px 0px 30px 15px;
+}
+
+.searchBox > .searchInput{
+    padding: 10px 30px;
+    background: #F5F7F9;
+    border: 1px solid #F5F7F9;
+    border-radius: 12px;
+    font-size: 11px;
+    color : #4d4d4d;
+    text-decoration: none;
+}
+
+/* .sidebarItem{
+    margin: 10px auto auto 20px;
+    width : 180px;
+} */
+
+.menuItems{
+    display : flex;
+    justify-content : flex-start;
+    align-items: stretch;
+    padding : 10px;
+    margin : 10px 0px;
+}
+
+.menuItems:active{
+    border-radius: 20px;
+    background-color: #dacdf989;
+}
+
+.menuName{
+    margin-left : 10px;
+}
+
+/* 메뉴 이름 */
+.navMenu{
+    text-decoration: none;
+    color : #84828A;
+}
+
+.navMenu.active{
+    color : #6425FE;
+}

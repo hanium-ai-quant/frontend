@@ -1,0 +1,49 @@
+/* Path: src/App.css */
+.Home {
+  position: relative;
+  top: 56px;
+  text-align: left;
+  background-color: #f2f2f2;
+  overflow: auto;
+  padding : 30px 40px;
+}
+
+.PageName {
+  font-size: large;
+  font-weight: bold;
+  color : #2c2c2c;
+}
+
+.myPortfolio{
+  margin-bottom: 60px;
+}
+
+.card{
+  width: 25rem;
+  border: none;
+}
+
+/*slides-container는 슬라이드 컴포넌트의 폭을 결정합니다.*/
+.slides-container{
+  position : relative;
+  text-align: left;
+  background-color: #ffffff;
+  padding : 0px 50px;
+  border-radius: 20px;
+  width : 77.5vw;
+}
+
+.stockChart{
+  display: flex;
+}
+
+/*list-container는 주식 목록 컴포넌트의 폭을 결정합니다.*/
+.list-container {
+  width:500px;
+  margin-left : 100px;
+}
+/*listItem은 주식 목록 컴포넌트의 각 주식 정보 간의 간격을 결정합니다.*/
+.listItem {
+  display: flex;
+  justify-content: space-between;
+}

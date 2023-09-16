@@ -1,0 +1,34 @@
+.startHeader{
+    display : flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    height : 85px;
+    padding: 10px 70px 0px 70px;
+    border-left: inset;
+    border-bottom-color: lightgray;
+    border-bottom-width: 0px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position : fixed;
+    z-index: 10000;
+    top : 0;
+    left : 0;
+    right : 0;
+}
+.GoLink {
+    position: relative;
+}
+/* 로그인 회원가입 text Link */
+.GoLink > .login-Link, .signup-Link{
+    text-decoration: none;
+    margin-right : 10px;
+    color : #8D8B93;
+}
+
+/* 마우스 이벤트 */
+.login-Link:hover, .signup-Link:hover{
+    color : #6F6AF8;
+    font-weight: 600;
+}
+
+

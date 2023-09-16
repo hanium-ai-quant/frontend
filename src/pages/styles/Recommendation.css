@@ -1,0 +1,50 @@
+/* 전체 추천 페이지 */
+.recommendPage{
+    position: relative;
+    top: 56px;
+    display : flex;
+    padding : 30px 40px;
+    background-color : #f2f2f2;
+    height: 100vh;
+}
+
+/* 추천 화면 */
+.Recommend{
+    margin : 0px 30px 0px 10px;
+}
+
+/* 추천 종목 */
+.stock-Container{
+    background-color : #ffffff;
+    padding : 30px 20px;
+    border-radius: 20px;
+}
+.stockBtns{
+    display : flex;
+    flex-direction: column;
+    gap : 30px;
+}
+
+.stockBtns > .recoStockName{
+    display : flex;
+    align-items: center;
+    padding : 10px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    border : none;
+    font-size: large;
+    cursor: pointer;
+}
+
+/* 버튼이 선택되었을 때 */
+.recoStockName:active{
+    border: 1px solid #6F6AF8;
+    background-color : #EFE9FF;
+}
+
+/* 종목 로고 */
+.recoStockName > .stockImg {
+    width : 2rem;
+    margin-right : 15px;
+}
