@@ -21,10 +21,12 @@ function Portfolio() {
   return (
     <div className="portfolio-container">
       <p className="pageName"> Portfolio </p>
-      {!stocks ? <NoPortfolio/> : (<p> 포트폴리오 화면 </p>)}
-      <div style={{textAlign:'center'}}>
-        <button className="addStock-btn" onClick={goAddStock}> 종목 추가하기 </button>
-        {modalOpen && <AddStock setModalOpen={setModalOpen} handleAddStock={handleAddStock}/>}
+      <div style={{padding : "50px 457px"}}>
+        {!stocks ? <NoPortfolio/> : (<p> 포트폴리오 화면 </p>)}
+        <div style={{textAlign:'center'}}>
+          <button className="addStock-btn" onClick={goAddStock}> 종목 추가하기 </button>
+          {modalOpen && <AddStock setModalOpen={setModalOpen} handleAddStock={handleAddStock}/>}
+        </div>
       </div>
     </div>
   );

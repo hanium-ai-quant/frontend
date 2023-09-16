@@ -41,7 +41,7 @@ function MyPage() {
                 <p className="pageName"> My Information </p>
                 <MyInfo/>
             </div>
-            <div>
+            <div style={{paddingRight : "215px"}}>
                 <div>
                     <p className = "pageName"> Interested Stocks </p>
                     <InteretStocks/>

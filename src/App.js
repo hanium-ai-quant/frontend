@@ -92,7 +92,7 @@ function App({ isAuthenticated }) {
       {/* 현재는 로그인 확인이 안되므로, 원하는 상황에 따라 주석 풀어서 사용 */}
 
       {/* 로그인 X 화면 */}
-      {!isAuthenticated? 
+      {isAuthenticated? 
         <NoLogin/>
         :
         <YesLogin/>
@@ -104,7 +104,8 @@ function App({ isAuthenticated }) {
         :
         <YesLogin/>
       } */}
-      
+
+
     </BrowserRouter>
 
   );

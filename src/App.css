@@ -7,4 +7,5 @@
   .AppContainer{
     position : relative;
     left : 227px;
+    width : fit-content;
   }

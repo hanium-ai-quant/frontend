@@ -6,12 +6,11 @@
     background-color: #f2f2f2;
     white-space: pre-line;
     padding : 30px 40px;
-    height: 92.5vh;  
-    width : 84vw;
+    height: 92.5vh;
 }
 
 .MyInfo{
-    margin-right : 50px;
+    margin-right : 150px;
 }
 
 .profile-link{

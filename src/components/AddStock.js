@@ -5,8 +5,11 @@
 import React, { useState } from "react";
 import "./styles/AddStock.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-function AddStock({setModalOpen, handleAddStock}) {
+function AddStock({setModalOpen}) {
+
+    const navigate = useNavigate();
 
     const [values, setValues] = useState({
         stockName : '',
@@ -28,6 +31,15 @@ function AddStock({setModalOpen, handleAddStock}) {
     //지금은 콘솔 출력만 -> 서버로 전송하는 코드 추가 필요
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        let body = {
+            stockName : values.stockName,
+            amount : values.amount,
+            date : values.date,
+            price : values.price,
+        }
+        console.log(body);
+
         if(values.stockName === '' || values.date === ''){
             if(values.stockName === ''){
                 alert('종목 이름을 입력하세요');
@@ -37,12 +49,16 @@ function AddStock({setModalOpen, handleAddStock}) {
             }
         }
         else{
+
             //API 전송 
-            axios.post('API 주소', values)
+            axios.post('API 주소', body)
                 .then((response) => console.log(response.data))
                 .catch((response) => console.log('Error'))
-            console.log(values);
-        }        
+
+            setModalOpen(false); //모달 닫기
+            navigate('/portfolio'); //페이지 이동!
+        }  
+        
     }
     
     //모달 창 닫기
@@ -55,20 +71,20 @@ function AddStock({setModalOpen, handleAddStock}) {
             <p className="containerName"> Add Stock </p>
             <form onSubmit={handleSubmit}>
                 <div className="add-main">
-                    <label > 종목 이름 </label>
-                    <input name="stockName" value={values.stockName} onChange={handleChange}/>
+                    <label htmlFor="stockName"> 종목 이름 </label>
+                    <input  id="stockName" name="stockName" value={values.stockName} onChange={handleChange}/>
                     <div className="add-optionBox">
                         <div className="add-option">
-                            <label > 수량 </label>
-                            <input type="number" name="amount" value={values.amount} onChange={handleChange} min={0}/>
+                            <label htmlFor="amount" > 수량 </label>
+                            <input type="number" id="amount" name="amount" value={values.amount} onChange={handleChange} min={0}/>
                         </div>
                         <div className="add-option">
-                            <label > 매수 날짜 </label>
-                            <input type="date" name="date" value={values.date} onChange={handleChange}/>
+                            <label htmlFor="date"> 매수 날짜 </label>
+                            <input type="date" id="date" name="date" value={values.date} onChange={handleChange}/>
                         </div>
                         <div className="add-option">
-                            <label > 구매 금액 </label>
-                            <input name="price" value={values.price} onChange={handleChange}/>
+                            <label htmlFor="price"> 구매 금액 </label>
+                            <input name="price" id="price" value={values.price} onChange={handleChange}/>
                         </div>
                     </div>
                 </div>
