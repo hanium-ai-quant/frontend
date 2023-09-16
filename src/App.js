@@ -89,11 +89,22 @@ function App({ isAuthenticated }) {
   return (
     <BrowserRouter>
       {/* 로그인 여부에 따라 렌더링 다르게 */}
+      {/* 현재는 로그인 확인이 안되므로, 원하는 상황에 따라 주석 풀어서 사용 */}
+
+      {/* 로그인 X 화면 */}
       {!isAuthenticated? 
         <NoLogin/>
         :
         <YesLogin/>
       }
+
+      {/* 로그인 O 화면 */}
+      {/* {isAuthenticated? 
+        <NoLogin/>
+        :
+        <YesLogin/>
+      } */}
+      
     </BrowserRouter>
 
   );
