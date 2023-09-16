@@ -24,6 +24,7 @@ import InterestPage from "./pages/IntersetPage"; //관심분야 설정 화면
 
 import './App.css';
 
+//
 // function MainRoute(){
 //   return(
 //     <div>
