@@ -158,7 +158,7 @@ function SignUpPage(props) {
                         )}
                     </div>
                 </div>
-                <input type="submit" disabled={loading} value="SGIN UP" className="SignupBtn"/>
+                <input type="submit" disabled={loading} value="SIGN UP" className="SignupBtn"/>
                 </form>
             </div>
         </div>

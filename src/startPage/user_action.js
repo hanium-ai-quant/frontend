@@ -9,7 +9,7 @@ import {
 
 // 로그인
 export function loginUser(dataTosubmit) {
-    const request = axios.post('API 주소', dataTosubmit)
+    const request = axios.get('http://127.0.0.1:8000/api/login/', dataTosubmit)
         .then(response => response.data)
 
     return {
@@ -20,7 +20,7 @@ export function loginUser(dataTosubmit) {
 
 // 회원가입
 export function registerUser(dataTosubmit){
-    const request = axios.post('API 주소', dataTosubmit)
+    const request = axios.post('http://127.0.0.1:8000/api/signup/', dataTosubmit)
         .then(response => response.data)
 
     return {
